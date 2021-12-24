@@ -1,5 +1,5 @@
 {
-    "name": "react-native-system-setting",
+    "name": "react-native-system-setting-ts",
     "version": "1.7.7",
     "description": "provide some system setting APIs. Volume, brightness, wifi, location, bluetooth, airplane...",
     "main": "SystemSetting.js",
@@ -23,13 +23,13 @@
         "airplane"
     ],
     "author": {
-        "name": "Ninty",
-        "email": "c19354837@hotmail.com",
-        "url": "https://github.com/c19354837"
+        "name": "Trunksys",
+        "email": "office@trunk-studio.com",
+        "url": "https://trunk-studio.com"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/c19354837/react-native-system-setting.git"
+        "url": "https://github.com/trunk-studio/react-native-system-setting-ts.git"
     },
     "license": "MIT"
 }
