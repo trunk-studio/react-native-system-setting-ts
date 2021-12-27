@@ -19,7 +19,7 @@
     <!-- switchBluetoothSilence() -->
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
-    <!-- setVolume(0), see https://github.com/c19354837/react-native-system-setting/issues/48 -->
+    <!-- setVolume(0), see https://github.com/c19354837/react-native-system-setting-ts/issues/48 -->
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
 
     <application

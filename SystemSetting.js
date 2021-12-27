@@ -65,7 +65,7 @@ export default class SystemSetting {
      * @deprecated use grantWriteSettingPermission instead
      */
     static grantWriteSettingPremission() {
-        __DEV__ && console.warn('grantWriteSettingPremission has been renamed to grantWriteSettingPermission, see https://github.com/c19354837/react-native-system-setting/pull/98')
+        __DEV__ && console.warn('grantWriteSettingPremission has been renamed to grantWriteSettingPermission, see https://github.com/c19354837/react-native-system-setting-ts/pull/98')
         SystemSetting.grantWriteSettingPermission()
     }
 

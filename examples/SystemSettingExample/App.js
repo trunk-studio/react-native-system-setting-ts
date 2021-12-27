@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, StatusBar, Alert, Text, View, Slider, TouchableOpacity, Switch, ActivityIndicator, ScrollView, Platform } from 'react-native'
 
-import SystemSetting from 'react-native-system-setting'
+import SystemSetting from 'react-native-system-setting-ts'
 
 export default class SystemSettingExample extends Component {
 

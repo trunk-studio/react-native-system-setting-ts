@@ -2,18 +2,18 @@
 
 **All are static method, and all GET mothods return a promise**
 
-**Maybe [codes](https://github.com/c19354837/react-native-system-setting/blob/master/SystemSetting.js) is best document**
+**Maybe [codes](https://github.com/c19354837/react-native-system-setting-ts/blob/master/SystemSetting.js) is best document**
 
-> Some APIs are marked with an asterisk at the beginning, and it means you need declare permission for Androidn since V1.5.0, see [Android Permission](https://github.com/c19354837/react-native-system-setting#android-permission)
+> Some APIs are marked with an asterisk at the beginning, and it means you need declare permission for Androidn since V1.5.0, see [Android Permission](https://github.com/c19354837/react-native-system-setting-ts#android-permission)
 > 
-> Some APIs which start with `swtich` or containt `bluetooth` are disabled for iOS since V1.7.0, you can [enable it](https://github.com/c19354837/react-native-system-setting/blob/master/iOS.md#ios) in a few steps. 
+> Some APIs which start with `swtich` or containt `bluetooth` are disabled for iOS since V1.7.0, you can [enable it](https://github.com/c19354837/react-native-system-setting-ts/blob/master/iOS.md#ios) in a few steps. 
 
 method | description
 ------ | -----------
 **Volume**|
 getVolume(type:string) => Promise | Get the system volume. <br><br>`type` must be one of `music`, `call`, `system`, `ring`, `alarm`, `notification`, default is `music`
 setVolume(val:float, config:object) | Set the system volume by specified value, from 0 to 1. 0 for mute, and 1 is max volume.<br><br> `config` can be `{type: 'music', playSound:true, showUI:true}`<br><br> `type` : must be one of `music`, `call`, `system`, `ring`, `alarm`, `notification`, default is `music`.(Android only) <br>`playSound`: Whether to play a sound when changing the volume, default is `false`(Android only)<br>`showUI`: Show a toast containing the current volume, default is `false`(Android & iOS)<br><br> **since 1.2.2**
-addVolumeListener(callback) | Listen the volume changing, and it will return the listener. More info see [the example](https://github.com/c19354837/react-native-system-setting/blob/master/examples/SystemSettingExample/index.js#L42)
+addVolumeListener(callback) | Listen the volume changing, and it will return the listener. More info see [the example](https://github.com/c19354837/react-native-system-setting-ts/blob/master/examples/SystemSettingExample/index.js#L42)
 removeVolumeListener(listener)| Remove listener when it no longer needed.
 ---|---
 **Brightness**|
@@ -31,7 +31,7 @@ restoreBrightness() => Promise|Restore brightness and screen mode back to saveBr
 **Wifi**|
 \* isWifiEnabled() => Promise|Get wifi state, true if wifi is on.
 switchWifi(complete)|It will open **Wifi Setting Page**, and you can change it by yourself. When come back to the app, the `complete` will be call.
-\*\* switchWifiSilence(complete)|It will open wifi if the wifi is off, and close wifi when the wifi is on now. When it has done, the `complete` will be call.<br/>In android, it's done programmatically. <br><br>In iOS, I cannot do that by code for system limiting, so it just calls `switchWifi(complete)`<br><br>You need declare `android.permission.CHANGE_WIFI_STATE` in your AndroidManifest.xml, see [detail](https://github.com/c19354837/react-native-system-setting#android-permission)
+\*\* switchWifiSilence(complete)|It will open wifi if the wifi is off, and close wifi when the wifi is on now. When it has done, the `complete` will be call.<br/>In android, it's done programmatically. <br><br>In iOS, I cannot do that by code for system limiting, so it just calls `switchWifi(complete)`<br><br>You need declare `android.permission.CHANGE_WIFI_STATE` in your AndroidManifest.xml, see [detail](https://github.com/c19354837/react-native-system-setting-ts#android-permission)
 addWifiListener(callback) => Promise| Listen the wifi state changing, and it will return the listener. (Android only)
 ---|---
 **Location**|
@@ -44,15 +44,15 @@ addLocationModeListener(callback) => Promise| Listen the location mode changing,
 **Bluetooth**|
 \* isBluetoothEnabled() => Promise|Get bluetooth state, true if bluetooth is on.
 switchBluetooth(complete)|It will open **System Bluetooth Setting Page**, and you can change it by yourself. When come back to the app, the `complete` will be call.
-\*\* switchBluetoothSilence(complete)|It will open bluetooth if the bluetooth is off, and close bluetooth when the bluetooth is on now. When it has done, the `complete` will be call.<br/>In android, it's done programmatically. <br><br>In iOS, I cannot do that by code for system limiting, so it just calls `switchBluetooth(complete)`<br><br>You need declare `android.permission.BLUETOOTH_ADMIN` in your AndroidManifest.xml, see [detail](https://github.com/c19354837/react-native-system-setting#android-permission)
+\*\* switchBluetoothSilence(complete)|It will open bluetooth if the bluetooth is off, and close bluetooth when the bluetooth is on now. When it has done, the `complete` will be call.<br/>In android, it's done programmatically. <br><br>In iOS, I cannot do that by code for system limiting, so it just calls `switchBluetooth(complete)`<br><br>You need declare `android.permission.BLUETOOTH_ADMIN` in your AndroidManifest.xml, see [detail](https://github.com/c19354837/react-native-system-setting-ts#android-permission)
 addBluetoothListener(callback) => Promise| Listen the bluetooth state changing, and it will return the listener.
 ---|---
 **Airplane**|
-isAirplaneEnabled() => Promise|Get airplane state, true if airplane is on. <br><br>It will always return `true` for iOS if your device has no SIM card, see [detail](https://github.com/c19354837/react-native-system-setting/issues/37)
+isAirplaneEnabled() => Promise|Get airplane state, true if airplane is on. <br><br>It will always return `true` for iOS if your device has no SIM card, see [detail](https://github.com/c19354837/react-native-system-setting-ts/issues/37)
 switchAirplane(complete)|It will open **System Setting Page**, and you can change it by yourself. When come back to the app, the `complete` will be call.
 addAirplaneListener(callback) => Promise| Listen the airplane state changing, and it will return the listener. (Android only)
 ---|---
 **Other**|
-setAppStore(isAppStore:bool)| `true` means that you'll submit your app to App Store. In order to throught the App Store review, it has some side effects, see [Private API](https://github.com/c19354837/react-native-system-setting/blob/master/iOS.md#private-api).<br><br>`false` means that your app will not upload to App Store, and you can use any APIs at will.
+setAppStore(isAppStore:bool)| `true` means that you'll submit your app to App Store. In order to throught the App Store review, it has some side effects, see [Private API](https://github.com/c19354837/react-native-system-setting-ts/blob/master/iOS.md#private-api).<br><br>`false` means that your app will not upload to App Store, and you can use any APIs at will.
 removeListener(listener)| you can use this to remove the listener which return by `add*Listener(callback)`
 openAppSystemSettings()| open app's setting page

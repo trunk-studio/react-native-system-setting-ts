@@ -22,7 +22,7 @@ There are some functions which start with `switch`:
 * `switchLocation()`
 * `switchAirplane()`
 
-I implement them by using non-public APIs, which is not permitted on the App Store, see [this issue](https://github.com/c19354837/react-native-system-setting/issues/28). 
+I implement them by using non-public APIs, which is not permitted on the App Store, see [this issue](https://github.com/c19354837/react-native-system-setting-ts/issues/28). 
 
 **These functions are disabled by default. You must not call them If your app need submit to App Store. As an alternative, you can show a tip to tell the user how to change the system setting.**
 
@@ -61,7 +61,7 @@ Add `post_install` hook in `Podfile`:
 
     ## ADD THE FOLLOWING:
 
-    # Enables bluetooth functionality of react-native-system-setting
+    # Enables bluetooth functionality of react-native-system-setting-ts
     installer.pods_project.targets.each do |target|
       if target.name == "RCTSystemSetting"
         target.build_configurations.each do |config|
@@ -80,7 +80,7 @@ Then open `Info.plist` as source code.
 
 ![open Info.plist as source code](./screenshot/ios_bluetooth_plist.png)
  
-Finally, add `NSBluetoothPeripheralUsageDescription` in `Info.plist`, see [Info.plist - example](https://github.com/c19354837/react-native-system-setting/blob/master/examples/SystemSettingExample/ios/SystemSettingExample/Info.plist#L55-L56)
+Finally, add `NSBluetoothPeripheralUsageDescription` in `Info.plist`, see [Info.plist - example](https://github.com/c19354837/react-native-system-setting-ts/blob/master/examples/SystemSettingExample/ios/SystemSettingExample/Info.plist#L55-L56)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

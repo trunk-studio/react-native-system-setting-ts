@@ -297,7 +297,7 @@ public class SystemSetting extends ReactContextBaseJavaModule implements Activit
             am.setStreamVolume(volType, (int) (val * am.getStreamMaxVolume(volType)), flags);
         } catch (SecurityException e) {
             if (val == 0) {
-                Log.w(TAG, "setVolume(0) failed. See https://github.com/c19354837/react-native-system-setting/issues/48");
+                Log.w(TAG, "setVolume(0) failed. See https://github.com/c19354837/react-native-system-setting-ts/issues/48");
                 NotificationManager notificationManager =
                         (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
